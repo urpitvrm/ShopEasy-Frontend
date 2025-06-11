@@ -223,7 +223,12 @@ function Header() {
                 : "text-gray-700 hover:text-blue-500"
             }
           >
-            Cart(0)
+            <div className="relative flex items-center gap-1 text-pink-700">
+              <CiShoppingCart className="text-2xl" />
+              <span className="absolute -top-2 -right-2 bg-pink-600 text-white text-xs px-1.5 py-0.5 rounded-full">
+                {cart.length}
+              </span>
+            </div>
           </NavLink>
         </div>
       )}
