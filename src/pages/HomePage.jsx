@@ -19,8 +19,9 @@ function HomePage() {
   const getAllProduct = async () => {
     try {
       const { data } = await axios.get(
-        "http://localhost:8080/api/v1/product/get-product"
+        "https://shop-easy-backend-beta.vercel.app/api/v1/product/get-product"
       );
+      
       if (data.success) {
         setProduct(data.products);
       } else {
