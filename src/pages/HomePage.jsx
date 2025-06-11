@@ -35,7 +35,7 @@ function HomePage() {
   const getAllCategories = async () => {
     try {
       const { data } = await axios.get(
-        "http://localhost:8080/api/v1/category/get-category"
+        "https://shop-easy-backend-beta.vercel.app/api/v1/category/get-category"
       );
       setCategories(data.categories);
     } catch (e) {
@@ -57,7 +57,7 @@ function HomePage() {
   const filterProduct = async () => {
     try {
       const { data } = await axios.post(
-        `http://localhost:8080/api/v1/product/filter-product?page=${currentPage}&limit=${productsPerPage}`,
+        `https://shop-easy-backend-beta.vercel.app/api/v1/product/filter-product?page=${currentPage}&limit=${productsPerPage}`,
         { checked, priceRange }
       );
       setProduct(data?.products);
@@ -183,7 +183,7 @@ function HomePage() {
                   <img
                     src={
                       p.image ||
-                      `http://localhost:8080/api/v1/product/product-photo/${p._id}`
+                      `https://shop-easy-backend-beta.vercel.app/api/v1/product/product-photo/${p._id}`
                     }
                     alt={p.name}
                     className="w-full h-68 object-cover rounded-md mb-4"
