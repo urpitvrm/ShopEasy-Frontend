@@ -12,7 +12,7 @@ function AdminOrders() {
   const getOrders = async () => {
     try {
       const { data } = await axios.get(
-        "http://localhost:8080/api/v1/all-orders"
+        "https://shop-easy-backend-beta.vercel.app/api/v1/all-orders"
       );
       if (data?.success) {
         setOrders(data.orders);
@@ -27,7 +27,7 @@ function AdminOrders() {
   const handleStatusChange = async (orderId, newStatus) => {
     try {
       const { data } = await axios.put(
-        `http://localhost:8080/api/v1/order-status/${orderId}`,
+        `https://shop-easy-backend-beta.vercel.app/api/v1/order-status/${orderId}`,
         {
           status: newStatus,
         }
@@ -124,7 +124,7 @@ function AdminOrders() {
                         className="border rounded-lg p-2 flex flex-col items-center"
                       >
                         <img
-                          src={`http://localhost:8080/api/v1/product/product-photo/${product._id}`}
+                          src={`https://shop-easy-backend-beta.vercel.app/api/v1/product/product-photo/${product._id}`}
                           alt={product.name}
                           className="w-24 h-24 object-cover mb-2 rounded"
                         />

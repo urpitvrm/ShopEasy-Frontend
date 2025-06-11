@@ -1,57 +1,3 @@
-// import React, { useState } from "react";
-// import { useNavigate } from "react-router-dom"; 
-// import {useSearch} from "../context/search.jsx";
-// import axios from "axios";
-// function SearchInput() {
-//   const [values, setValues] = useSearch(); 
-//   const navigate = useNavigate(); 
-
-//   const handleSubmit = async(e) => {
-//     e.preventDefault(); 
-
-//     try{
-//         const {data}=await axios.get(`http://localhost:8080/api/v1/product/search/${values.keyword}`);
-//         if(data.success){
-//             setValues({...values, results:data.products});
-//             navigate(`/search/${values.keyword}`);
-
-//         }
-//         else{
-//             console.log("No products found!");
-//         }
-//     }
-//     catch (error) {
-//       console.log(error);
-//     }
-//   };
-
-//   return (
-//     <>
-//       <form
-//         className="flex items-center justify-center mt-4"
-//         onSubmit={handleSubmit}
-//       >
-//         <input
-//           type="text"
-//           placeholder="Search for products..."
-//           className="w-full max-w-md p-2 border border-pink-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500"
-//           value={values.keyword}
-//           onChange={(e) => setValues({ ...values, keyword: e.target.values })}
-//         />
-//         <button
-//           type="submit"
-//         //   disabled={!values.keyword}
-//           className="ml-2 px-4 py-2 bg-pink-800 text-white rounded-lg hover:bg-pink-600 focus:outline-none focus:ring-2 focus:ring-pink-500"
-//         >
-//           Search
-//         </button>
-//       </form>
-//     </>
-//   );
-// }
-
-// export default SearchInput;
-
 import React from "react"; // No need for useState if useSearch provides state
 import { useNavigate } from "react-router-dom";
 import { useSearch } from "../context/search.jsx";
@@ -73,7 +19,7 @@ function SearchInput() {
     try {
       const searchKeyword = values.keyword.trim(); // Trim before API call
       const { data } = await axios.get(
-        `http://localhost:8080/api/v1/product/search/${searchKeyword}`
+        `https://shop-easy-backend-beta.vercel.app/api/v1/product/search/${searchKeyword}`
       );
 
       if (data.success) {

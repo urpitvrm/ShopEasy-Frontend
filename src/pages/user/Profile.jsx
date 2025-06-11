@@ -26,7 +26,7 @@ const Profile = () => {
     e.preventDefault();
     try {
       const { data } = await axios.put(
-        "http://localhost:8080/api/v1/auth/profile",
+        "https://shop-easy-backend-beta.vercel.app/api/v1/auth/profile",
         {
           name,
           email,

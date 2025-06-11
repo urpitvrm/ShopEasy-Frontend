@@ -9,7 +9,7 @@ function AllUser() {
   const alluser = async () => {
     try {
       const { data } = await axios.get(
-        "http://localhost:8080/api/v1/auth/get-users"
+        "https://shop-easy-backend-beta.vercel.app/api/v1/auth/get-users"
       );
       if (!data?.data) {
         console.log("No user is found");

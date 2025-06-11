@@ -6,7 +6,7 @@ function Card({ product }) {
       <img
         src={
           product.image ||
-          `http://localhost:8080/api/v1/product/product-photo/${product._id}`
+          `https://shop-easy-backend-beta.vercel.app/api/v1/product/product-photo/${product._id}`
         }
         alt={product.name}
         className="w-full h-48 object-cover rounded-md mb-4"

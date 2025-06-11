@@ -15,7 +15,7 @@ export default function AdminRoute() {
     const checkAdmin = async () => {
       try {
         const res = await axios.get(
-          "http://localhost:8080/api/v1/auth/admin-auth"
+          "https://shop-easy-backend-beta.vercel.app/api/v1/auth/admin-auth"
         );
         if (res.data.ok && auth?.user?.role === 1) {
           setOk(true);

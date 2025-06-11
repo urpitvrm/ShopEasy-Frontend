@@ -12,7 +12,7 @@ const navigate=useNavigate();
   const getProduct = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:8080/api/v1/product/get-product-by-id/${id}`
+        `https://shop-easy-backend-beta.vercel.app/api/v1/product/get-product-by-id/${id}`
       );
       if (data.success) {
         setProduct(data.product);
@@ -26,7 +26,7 @@ const navigate=useNavigate();
   const getCategoryName = async (categoryId) => {
     try {
       const { data } = await axios.get(
-        `http://localhost:8080/api/v1/category/get-category/${categoryId}`
+        `https://shop-easy-backend-beta.vercel.app/api/v1/category/get-category/${categoryId}`
       );
       if (data.success) {
         setCategoryName(data.category.name);
@@ -48,7 +48,7 @@ const navigate=useNavigate();
       if (!confirmDelete) return; // user clicked Cancel
 
       await axios.delete(
-        `http://localhost:8080/api/v1/product/delete-product/${id}`
+        `https://shop-easy-backend-beta.vercel.app/api/v1/product/delete-product/${id}`
       );
       navigate("/dashboard/admin/products");
     } catch (e) {
@@ -86,7 +86,7 @@ const navigate=useNavigate();
           <div className="bg-white shadow-xl rounded-2xl p-6 max-w-4xl w-full relative">
             <div className="flex flex-col md:flex-row gap-6">
               <img
-                src={`http://localhost:8080/api/v1/product/product-photo/${product._id}`}
+                src={`https://shop-easy-backend-beta.vercel.app/api/v1/product/product-photo/${product._id}`}
                 alt={product.name}
                 className="w-full md:w-1/2 h-full object-cover rounded-lg border-2 border-gray-200"
               />

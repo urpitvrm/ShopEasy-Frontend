@@ -12,7 +12,7 @@ function Product() {
   const getAllProduct = async () => {
     try {
       const { data } = await axios.get(
-        "http://localhost:8080/api/v1/product/get-product"
+        "https://shop-easy-backend-beta.vercel.app/api/v1/product/get-product"
       );
       if (data.success) {
         setProducts(data.products);
@@ -47,7 +47,7 @@ function Product() {
                 className="cursor-pointer bg-gray-50 shadow rounded-2xl overflow-hidden p-4 w-full sm:w-[47%] md:w-[31%] xl:w-[23%] transition hover:shadow-lg"
               >
                 <img
-                  src={`http://localhost:8080/api/v1/product/product-photo/${p._id}`}
+                  src={`https://shop-easy-backend-beta.vercel.app/api/v1/product/product-photo/${p._id}`}
                   alt={p.name}
                   className="w-86 h-48 object-cover rounded-md mb-3 border-4"
                 />

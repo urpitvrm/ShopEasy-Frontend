@@ -62,7 +62,7 @@ function Orders() {
                       className="flex items-center bg-gray-50 p-3 rounded shadow hover:shadow-md"
                     >
                       <img
-                        src={`http://localhost:8080/api/v1/product/product-photo/${id}`}
+                        src={`https://shop-easy-backend-beta.vercel.app/api/v1/product/product-photo/${id}`}
                         alt={product.name}
                         className="w-16 h-16 object-cover rounded mr-4"
                       />

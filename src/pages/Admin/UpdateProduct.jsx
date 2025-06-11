@@ -22,7 +22,7 @@ function UpdateProduct() {
     const fetchProduct = async () => {
       try {
         const { data } = await axios.get(
-          `http://localhost:8080/api/v1/product/get-product-by-id/${id}`
+          `https://shop-easy-backend-beta.vercel.app/api/v1/product/get-product-by-id/${id}`
         );
         if (data.success) {
           const { name, description, price, quantity, category, photo } =
@@ -42,7 +42,7 @@ function UpdateProduct() {
     const getAllCategory = async () => {
       try {
         const { data } = await axios.get(
-          "http://localhost:8080/api/v1/category/get-category"
+          "https://shop-easy-backend-beta.vercel.app/api/v1/category/get-category"
         );
         const sorted = data.categories.sort((a, b) =>
           a.name.localeCompare(b.name)
@@ -69,7 +69,7 @@ function UpdateProduct() {
       if (photo) updatedData.append("photo", photo);
   
       const { data } = await axios.put(
-        `http://localhost:8080/api/v1/product/update-product/${id}`,
+        `https://shop-easy-backend-beta.vercel.app/api/v1/product/update-product/${id}`,
         updatedData
       );
   
@@ -173,7 +173,7 @@ function UpdateProduct() {
                 <img
                   src={
                    
-                       `http://localhost:8080/api/v1/product/product-photo/${id}`
+                       `https://shop-easy-backend-beta.vercel.app/api/v1/product/product-photo/${id}`
                   }
                   alt="product"
                   className="mx-auto h-40 object-contain"

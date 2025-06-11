@@ -15,7 +15,7 @@ function DetailsOfProduct() {
   const getProduct = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:8080/api/v1/product/get-product-by-id/${id}`
+        `https://shop-easy-backend-beta.vercel.app/api/v1/product/get-product-by-id/${id}`
       );
       if (data.success) {
         setProduct(data.product);
@@ -30,7 +30,7 @@ function DetailsOfProduct() {
   const getCategoryName = async (categoryId) => {
     try {
       const { data } = await axios.get(
-        `http://localhost:8080/api/v1/category/get-category/${categoryId}`
+        `https://shop-easy-backend-beta.vercel.app/api/v1/category/get-category/${categoryId}`
       );
       if (data.success) {
         setCategoryName(data.category.name);
@@ -43,7 +43,7 @@ function DetailsOfProduct() {
   const getAllProductByCat = async (categoryId) => {
     try {
       const { data } = await axios.get(
-        `http://localhost:8080/api/v1/product/get-product/cat/${categoryId}`
+        `https://shop-easy-backend-beta.vercel.app/api/v1/product/get-product/cat/${categoryId}`
       );
       if (data.success) {
         setProductByCategory(data.products);
@@ -76,7 +76,7 @@ function DetailsOfProduct() {
         {/* Product Detail Card */}
         <div className="w-full max-w-6xl bg-white shadow-lg rounded-2xl p-6 flex flex-col md:flex-row gap-8">
           <img
-            src={`http://localhost:8080/api/v1/product/product-photo/${product._id}`}
+            src={`https://shop-easy-backend-beta.vercel.app/api/v1/product/product-photo/${product._id}`}
             alt={product.name}
             className="w-full md:w-1/2  object-cover rounded-xl border border-gray-200"
           />
@@ -133,7 +133,7 @@ function DetailsOfProduct() {
                     onClick={() => handleMoreDetails(p._id)}
                   >
                     <img
-                      src={`http://localhost:8080/api/v1/product/product-photo/${p._id}`}
+                      src={`https://shop-easy-backend-beta.vercel.app/api/v1/product/product-photo/${p._id}`}
                       alt={p.name}
                       className="w-full  object-cover rounded mb-3"
                     />

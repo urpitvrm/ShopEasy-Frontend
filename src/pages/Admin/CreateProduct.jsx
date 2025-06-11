@@ -19,7 +19,7 @@ function CreateProduct() {
   const getAllCategory = async () => {
     try {
       const { data } = await axios.get(
-        "http://localhost:8080/api/v1/category/get-category"
+        "https://shop-easy-backend-beta.vercel.app/api/v1/category/get-category"
       );
       const sorted = data.categories.sort((a, b) =>
         a.name.localeCompare(b.name)
@@ -47,7 +47,7 @@ function CreateProduct() {
       productData.append("photo", photo);
 
       const { data } = await axios.post(
-        "http://localhost:8080/api/v1/product/create-product",
+        "https://shop-easy-backend-beta.vercel.app/api/v1/product/create-product",
         productData
       );
       if (data?.success) {
