@@ -10,7 +10,7 @@ function Orders() {
 
   const getOrders = async () => {
     try {
-      const { data } = await axios.get("http://localhost:8080/api/v1/orders");
+      const { data } = await axios.get("https://shop-easy-backend-beta.vercel.app/api/v1/orders");
       if (data?.success) {
         setOrders(data.orders);
       } else {
